@@ -2,10 +2,10 @@ import express from "express"
 import bodyparser from "body-parser"
 import mongoose from "mongoose"
 import cors from "cors"
-
-
 import students from "./routes/students.js"
 import teachers from "./routes/teachers.js"
+import group from "./routes/groups.js"
+import sessions from "./routes/sessions.js"
 
 
 const app = express()
@@ -17,11 +17,13 @@ app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }))
 
 app.get("/", (req, res) => {
-    res.send("hello")
+    res.send("hello bachiri")
 })
 
 app.use("/students", students )
 app.use("/teachers", teachers )
+app.use("/groups",group)
+app.use("/sessions",sessions)
 
 
 

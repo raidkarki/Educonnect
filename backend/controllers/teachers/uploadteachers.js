@@ -1,4 +1,4 @@
-import { teachers } from "../../data/teachers.js";
+//import { teachers } from "../../data/teachers.js";
 import Teacher from "../../models/teacher.js";
 import bcrypt from "bcrypt";
 const saltRounds = 10;
