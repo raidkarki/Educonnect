@@ -1,10 +1,10 @@
 import fs from 'fs'
 import transform from "../../utils/transform.js"
 import Student from '../../models/student.js';
-
-const uploadstudents = async (req, res) => {
+//hadi lfonction li tala3t biha les students l database bel fonction ta3 transform
+const uploadstudents =  () => {
     const directoryPath = './data';
-    fs.readdir(directoryPath,async function (err, files) {
+    fs.readdir(directoryPath, function (err, files) {
         if (err) {
             return console.log('Unable to scan directory: ' + err);
         } 

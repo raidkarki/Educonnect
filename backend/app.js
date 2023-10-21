@@ -6,10 +6,13 @@ import students from "./routes/students.js"
 import teachers from "./routes/teachers.js"
 import group from "./routes/groups.js"
 import sessions from "./routes/sessions.js"
-
+import subjects from "./routes/subjects.js"
+import dotenv from "dotenv"
+dotenv.config()
 
 const app = express()
-const url="mongodb+srv://karkiraid35:l4RRQ6nfoLEiUzbB@cluster0.dm2zxmd.mongodb.net/educonnect"
+
+const url=process.env.MONGO_URL
 
 app.use(cors())
 
@@ -20,18 +23,18 @@ app.get("/", (req, res) => {
     res.send("hello bachiri")
 })
 
-app.use("/students", students )
+app.use("/students", students  )
 app.use("/teachers", teachers )
-app.use("/groups",group)
-app.use("/sessions",sessions)
+app.use("/subjects", subjects   )
+app.use("/groups",   group)
+app.use("/sessions", sessions)
 
 
 
 
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(()=>{
-    app.listen(process.env.PORT || 5000, () => console.log("server is running"))})
+.then(()=>{app.listen(process.env.PORT || 5000, () => console.log("server is running"))})
 .catch((error)=>console.log(error.message)) 
 
 

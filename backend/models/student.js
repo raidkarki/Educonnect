@@ -25,6 +25,7 @@ const student = new mongoose.Schema({
     },
     
     
+    
     groupId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Group', // Reference to the classroom or group document

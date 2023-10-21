@@ -23,12 +23,18 @@ const teacher = new mongoose.Schema({
     },	
     groups:[{
         type: mongoose.Schema.Types.ObjectId,
-    ref: 'group', // Reference to the classroom or group document
+        ref: 'group', // Reference to the classroom or group document
 
 
     }],
     Grade: String,
-    subjects: [String],
+    subjects: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'subject', // Reference to the classroom or group document
+            
+        }
+    ],
     setgroup:Boolean
 
 

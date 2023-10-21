@@ -9,8 +9,7 @@ const router = express.Router()
 
 
 router.post("/update", updatestudent)
-router.get("/list/", getStudents)
-
+router.get("/list", getStudents)
 router.get("/upload", uploadstudents)
 
 

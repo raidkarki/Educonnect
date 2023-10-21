@@ -1,11 +1,11 @@
 import Attendance from "../../models/session.js";
-
+//hna ki lhisa tebda lprof ycreer session w yb3t fiha les etudiants absent w les etudiants present
 export const createSession = async (req, res) => {
 
-    const { group, teacher, Subject,attendedStudents } = req.body
-    console.log(group, teacher, Subject, attendedStudents)
+    const { group, teacher, subject,attendedStudents } = req.body
+    console.log(group, teacher, subject, attendedStudents)
     try {
-        const newsession = new Attendance({ group, teacher, Subject, attendedStudents,date:new Date() })
+        const newsession = new Attendance({ group, teacher, subject, attendedStudents,date:new Date() })
         await newsession.save()
         res.status(200).json({ message: "session added" })
 
