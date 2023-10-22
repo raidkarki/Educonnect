@@ -10,7 +10,7 @@ import {createSession,getSessionsbygroup,getSessionsbyteacher,deleteSession,upda
 
 
 router.get("/",getSessionsbyteacher)
-router.post("/",createSession)
+router.post("/newsession",createSession)
 router.delete("/:id",deleteSession)
 router.patch("/:id",updateSession)
 

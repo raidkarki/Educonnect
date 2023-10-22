@@ -21,7 +21,7 @@ const login = async (req, res) => {
 
         const ispasswordcorrect=await bcrypt.compare(password,existingUser.password)
         if(!ispasswordcorrect) return res.status(401).json({message:"invalid credentials"})
-        const token=await jwt.sign({email:existingUser.email,id:existingUser._id},"oneyear",{expiresIn:"356d"})
+       // const token=await jwt.sign({email:existingUser.email,id:existingUser._id},"oneyear",{expiresIn:"356d"})
         
         res.status(200).json({
             fname:existingUser.name,
@@ -29,6 +29,7 @@ const login = async (req, res) => {
             email,
             subjects:existingUser.subjects,
             access_token:existingUser._id,
+            //token,
             groupset:existingUser.setgroup
         })
     } catch (error) {

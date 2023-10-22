@@ -18,8 +18,12 @@ const attendanceSchema = new mongoose.Schema({
 
   },
   Subject:{
-    type:mongoose.Schema.Types.ObjectId,
+    id:{type:mongoose.Schema.Types.ObjectId,
     ref:'Subject',
+    required:true},
+    type:String
+     
+    
     
 
 
@@ -32,11 +36,15 @@ const attendanceSchema = new mongoose.Schema({
   attendedStudents: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'students' // References to student documents who attended
+  }],
+  absentedStudents: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'students' // References to student documents who were absent
   }]
   // Other attendance event information fields
 });
 
 // Create a model for the attendance schema
-const Attendance = mongoose.model('Attendance', attendanceSchema);
+const Session = mongoose.model('Attendance', attendanceSchema);
 
-export default  Attendance;
+export default  Session;
